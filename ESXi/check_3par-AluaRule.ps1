@@ -5,11 +5,13 @@
         The script connects to a vCenter to get a list of ESXi hosts and then
         connects to each of these to create an ESXCLI object which is used
         to check for the existence of a custom 3PAR VMW_SATP_ALUA rule
+    .COMPONENT
+        The script requires the VMware PowerCLI module which can be installed from the PSGallery
     .NOTES
         Author: Rudi Martinsen / Intility AS
         Created: 02/05-2017
-        Version: 1.0.0
-        Revised: 
+        Version: 1.0.1
+        Revised: 03/05-2017
     .LINK
         #Add custom SATP claimrule for HP 3PAR to ESXi - vcloudnine.de
         https://www.vcloudnine.de/add-custom-satp-claimrule-for-hp-3par-to-vmware-esxi/
@@ -27,7 +29,7 @@ param ($VCenter,$Cluster)
 
 $RootPass = (Read-Host -Prompt "Please type password of ESXi Root user" -AsSecureString)
 
-Connect-I2VCenter $VCenter
+Connect-VIServer $VCenter
 
 if($Cluster){
     $vmhosts = Get-Cluster $Cluster | Get-VMHost -Server $vcenter | Where-Object {$_.PowerState -eq "PoweredOn"}
@@ -44,7 +46,7 @@ $outTbl = @()
 
 foreach($vmhost in $vmhosts){
 
-    Connect-I2ESXHost $vmhost -Username root -Password $Pass | Out-Null
+    Connect-VIServer $vmhost -Username root -Password $Pass | Out-Null
     $esxcli = Get-EsxCli -V2 -VMHost $vmhost.Name
     $rule = $esxcli.storage.nmp.satp.rule.list.Invoke() | where {$_.description -like "*3par*"} 
     Disconnect-VIServer $vmhost.Name -Confirm:$false
