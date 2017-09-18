@@ -13,14 +13,16 @@
         the existence of a DRS rule which specifies that the VM group should run
         its VMs on the Host group.
         It the rule is not found it will be created
-
     .NOTES
         Author: Rudi Martinsen / Intility AS
         Date : 05/09-2017
-        Version : 1.1.0
-        Revised : 08/09-2017
+        Version : 1.1.1
+        Revised : 18/09-2017
         Changelog:
+        1.1.1 -- Added link
         1.1.0 -- Added functionality for writing to the Notes field on VMs
+    .LINK        
+        http://www.rudimartinsen.com/2017/09/08/automating-drs-groups-with-powercli/
     .PARAMETER VCenter
         The vCenter server to process VMs from
     .PARAMETER Logfile
