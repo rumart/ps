@@ -10,3 +10,11 @@ This script checks ESXi hosts for the existence of a Custom 3PAR Rule.
 
 ### [DRS/drs-sql.ps1](DRS/drs-sql.ps1)
 This script automates creation and maintenance of DRS groups
+
+
+### [DRS/drs-sql-remove.ps1](DRS/drs-sql-remove.ps1)
+This script automates removal of members of a DRS group
+
+
+### [SPBM/replicate_storagepolicies.ps1](SPBM/replicate_storagepolicies.ps1)
+This script replicates Storage Policies from one vCenter to another
