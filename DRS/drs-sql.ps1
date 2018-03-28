@@ -16,9 +16,10 @@
     .NOTES
         Author: Rudi Martinsen / Intility AS
         Date : 05/09-2017
-        Version : 1.1.1
-        Revised : 18/09-2017
+        Version : 1.1.2
+        Revised : 28/03-2018
         Changelog:
+        1.1.2 -- Removed unused variables
         1.1.1 -- Added link
         1.1.0 -- Added functionality for writing to the Notes field on VMs
     .LINK        
@@ -32,8 +33,6 @@
 param($vcenter,$logfile)
 
 #Tag and Rule parameters
-$vmgroup = "SQL-VM"
-$hostgroup = "SQL-Host"
 $vmtag = "SQL-Lic"
 $hosttag = "SQL-Host"
 $ruleName = "SQL-Lic"
@@ -52,7 +51,6 @@ foreach($cluster in $clusters){
     $sqlVMs = @()
 
     #Initiate existence variables
-    $tagExists = $false
     $vmTagExists = $false
     $hostGroupExists = $false
     $vmGroupExists = $false
