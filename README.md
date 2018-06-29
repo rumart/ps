@@ -18,3 +18,6 @@ This script automates removal of members of a DRS group
 
 ### [SPBM/replicate_storagepolicies.ps1](SPBM/replicate_storagepolicies.ps1)
 This script replicates Storage Policies from one vCenter to another
+
+### [Limits/setVMDisklimits_frompolicy.ps1](Limits/setVMDisklimits_frompolicy.ps1)
+This script automates the process of setting disk iops on VMDKs
