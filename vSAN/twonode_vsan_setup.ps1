@@ -18,9 +18,11 @@
         Changelog:
         1.1.0 -- Fixed teaming policy
         1.0.0 -- Finished setup of VSAN cluster with fault domains, witness host etc
-        0.3.0 -- Parameterized names from loc.code (aa362)
+        0.3.0 -- Parameterized names from loc.code
     .LINK
-        https://www.rudimartinsen.com/2018/10/29/automating-vsan-cluster-setup
+        https://www.rudimartinsen.com/2018/12/31/automating-two-node-vsan-cluster-setup/
+    .LINK
+        https://www.jasemccarty.com/blog/deploy2node-ps1/
     .PARAMETER LocationCode
         The location code of the new location, used to determine name for Cluster and hosts
     .PARAMETER WitnessIP
