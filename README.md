@@ -24,3 +24,6 @@ This script automates the process of setting disk iops on VMDKs
 
 ### [vSAN/twonode_vsan_setup.ps1](vSAN/twonode_vsan_setup.ps1)
 This script automates the setup of a two-node vSAN cluster with a witness appliance
+
+### [NSX/change_macprofile_nsxt.ps1](nsx/change_macprofile_nsxt.ps1)
+This script will change the profile attached to a NSX-T switch
